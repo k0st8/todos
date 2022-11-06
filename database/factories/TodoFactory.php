@@ -11,10 +11,20 @@ class TodoFactory extends Factory
      *
      * @return array
      */
+    protected status = ['Todo', 'Done']
     public function definition()
     {
         return [
             //
+            // 'id'=>$faker->number(),
+            'title' => $faker->title,
+            'status' => $faker->number({
+                min:0,
+                max:1
+            }),
+            'user_id'=>$faker->number(199),
+            'viewed'=>$faker->number(),
+            'description'=>$faker->text($maxNbChars=100)
         ];
     }
 }

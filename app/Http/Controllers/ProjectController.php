@@ -15,7 +15,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        // List all projects
+       return Project::all();
+
     }
 
     /**

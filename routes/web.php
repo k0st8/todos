@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/fakertest',function(){
+    $faker = Faker\Factory::create();
+    $limit = 10;
+    for ($i = 0; $i < $limit; $i++) {
+    echo nl2br ('Name: ' . $faker->name . ', Email Address: ' . $faker->unique()->email . ', Contact No: ' . $faker->phoneNumber . "\n");
+    }
+});
